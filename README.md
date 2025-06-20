@@ -17,26 +17,31 @@
 
 **Rotas**
 
-- **GET /api/herois**
+- **GET /api/Herois**
 
   Retorna a lista de todos os heróis cadastrados, incluindo seus superpoderes.  
   Retorna 200 com lista vazia caso não existam heróis.
 
-- **GET /api/herois/{id}**  
+- **GET /api/Superpoderes**
+
+  Retorna a lista de todos os super poderes do banco de dados. Usado para popular a lista de seleção de poderes no formulário de herói.  
+  Retorna 200 com a lista dos superpoderes incluindo id, nome do superpoder e descrição.
+
+- **GET /api/Herois/{id}**  
   Retorna um herói específico pelo seu ID, com todos os dados e superpoderes associados.  
   Retorna 404 se não encontrado.
 
-- **POST /api/herois**  
+- **POST /api/Herois**  
   Cria um novo herói com os dados enviados, incluindo a associação a superpoderes existentes.  
   Valida duplicidade de nome, superpoderes válidos e data de nascimento.  
   Retorna 201 com o herói criado.
 
-- **PUT /api/herois/{id}**  
+- **PUT /api/Herois/{id}**  
   Atualiza um herói existente pelo ID, permitindo alterar seus dados e superpoderes.  
   Valida existência do herói, duplicidade de nome, data e superpoderes válidos.  
   Retorna 200 com os dados atualizados.
 
-- **DELETE /api/herois/{id}**  
+- **DELETE /api/Herois/{id}**  
   Remove o herói pelo ID.  
   Retorna 200 com mensagem de sucesso ou 404 se não encontrado.
 
