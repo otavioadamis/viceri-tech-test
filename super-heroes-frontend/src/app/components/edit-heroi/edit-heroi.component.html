@@ -1,0 +1,58 @@
+<h2 mat-dialog-title>
+  {{ heroi.id ? 'Editar Herói' : 'Novo Herói' }}
+</h2>
+
+<div *ngIf="heroi?.id" class="subtitulo">
+  <span>{{ heroi.nomeHeroi }}</span>
+</div>
+
+<form (ngSubmit)="heroi.id ? salvar(heroi) : criar(heroi)">
+  <mat-dialog-content class="form-content">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="heroi.nome" name="nome" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome de Herói</mat-label>
+      <input matInput [(ngModel)]="heroi.nomeHeroi" name="nomeHeroi" required (input)="erro = null" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Super poderes</mat-label>
+      <mat-select [(ngModel)]="heroi.superpoderes" name="superPoderes" multiple required>
+        <mat-option *ngFor="let poder of superPoderesDisponiveis" [value]="poder">
+          {{ poder.superpoder }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="heroi.dataNascimento" name="dataNascimento" required />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Altura</mat-label>
+      <input type="number" matInput [(ngModel)]="heroi.altura" name="altura" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Peso</mat-label>
+      <input type="number" matInput [(ngModel)]="heroi.peso" name="peso" required />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-flat-button color="primary" type="submit">
+      {{ heroi.id ? 'Salvar' : 'Criar' }}
+    </button>
+    <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+  </mat-dialog-actions>
+
+  <div *ngIf="erro" class="erro-msg">
+    {{ erro }}
+  </div>
+</form>

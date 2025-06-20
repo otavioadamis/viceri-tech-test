@@ -1,0 +1,64 @@
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  align-items: center;
+}
+
+.empty-message {
+  margin: 40px auto;
+  padding: 20px 30px;
+  max-width: 400px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #555;
+  background-color: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.home-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    align-self: flex-end;
+  }
+
+  .herois-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .heroi-panel {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+  }
+
+  .heroi-info {
+    padding: 0.5rem 1rem;
+
+    p {
+      margin: 0.3rem 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0;
+    }
+  }
+}

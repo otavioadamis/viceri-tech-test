@@ -1,0 +1,41 @@
+<div class="home-container">
+    <h1>Lista de Heróis</h1>
+
+    <button mat-flat-button color="primary" (click)="createNewHeroi()">Criar novo herói</button>
+
+    <div *ngIf="herois.length === 0" class="empty-message">
+        A lista está vazia... Hora de criar um novo herói para salvar o dia!
+    </div>
+
+    <div *ngIf="herois.length > 0" class="herois-list">
+        <mat-expansion-panel hideToggle *ngFor="let heroi of herois" class="heroi-panel">
+            <mat-expansion-panel-header>
+                <mat-panel-title>{{heroi.id}} | {{heroi.nomeHeroi}}</mat-panel-title>
+                <mat-panel-description> {{heroi.superpoderes.length}} {{heroi.superpoderes.length == 1 ? 'Superpoder' :
+                    'Superpoderes'}}</mat-panel-description>
+                <span class="action-buttons">
+                    <button mat-icon-button color="primary" (click)="editHeroi(heroi)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="removeHeroi(heroi)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </span>
+            </mat-expansion-panel-header>
+
+            <div class="heroi-info">
+                <p><strong>Nome verdadeiro:</strong> {{heroi.nome}}</p>
+                <p><strong>Data de nascimento: </strong>{{ heroi.dataNascimento | date:'dd/MM/yyyy' }}</p>
+                <p><strong>Altura:</strong> {{heroi.altura}} m</p>
+                <p><strong>Peso:</strong> {{heroi.peso}} kg</p>
+                <p><strong>Super poderes:</strong></p>
+                <mat-chip-grid>
+                    <mat-chip *ngFor="let sp of heroi.superpoderes" (click)="abrirDescricao(sp)" selectable="true"
+                        color="primary" selected>
+                        {{ sp.superpoder }}
+                    </mat-chip>
+                </mat-chip-grid>
+            </div>
+        </mat-expansion-panel>
+    </div>
+</div>
