@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SuperHeroes.Data;
+using SuperHeroes.Interfaces;
+using SuperHeroes.Services;
 
 namespace SuperHeroes.Controllers
 {
@@ -9,18 +11,18 @@ namespace SuperHeroes.Controllers
     [ApiController]
     public class SuperpoderesController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly ISuperpoderService _superpoderService;
 
-        public SuperpoderesController(AppDbContext context)
+        public SuperpoderesController(ISuperpoderService superpoderService)
         {
-            _context = context;
+            _superpoderService = superpoderService;
         }
 
-        // GET: api/SuperPoderes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SuperPoder>>> GetSuperPoderes()
         {
-            return await _context.Superpoderes.ToListAsync();
+            var poderes = await _superpoderService.ListarTodosAsync();
+            return Ok(poderes);
         }
     }
 }

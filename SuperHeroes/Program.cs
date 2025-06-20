@@ -17,8 +17,12 @@ namespace SuperHeroes
             // Add services to the container.
 
             builder.Services.AddControllers();
+
             builder.Services.AddScoped<IHeroiRepository, HeroiRepository>();
             builder.Services.AddScoped<IHeroiService, HeroiService>();
+            builder.Services.AddScoped<ISuperpoderRepository, SuperpoderRepository>();
+            builder.Services.AddScoped<ISuperpoderService, SuperpoderService>();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
