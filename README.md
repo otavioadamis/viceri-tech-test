@@ -71,12 +71,12 @@ Implementei um middleware global para captura e tratamento centralizado de exce�
 ## Uso de Entity Framework Core com Banco InMemory 🛠️
 
 Escolhi usar o banco InMemory para facilitar o desenvolvimento local e testes, evitando configuração complexa de banco real. A arquitetura está preparada para, futuramente, trocar para um banco relacional real como SQL Server ou PostgreSQL com mudanças mínimas.
-# Sobre o frontend 🖥️
+# Sobre o frontend
 
-**Angular 18 com Standalone Components**
+## Angular 18 com Standalone Components ⚙️
 
 Optei por utilizar a arquitetura mais moderna do Angular, com componentes standalone para simplificar a estrutura e reduzir dependências desnecessárias em módulos.
 
-**Angular Material**
+## Angular Material 🎨
 
 Para garantir uma interface consistente, responsiva e visualmente agradável, escolhi o Angular Material como biblioteca de componentes UI. Ele oferece componentes prontos e acessíveis como botões, diálogos modais, inputs, selects e datepickers, facilitando o desenvolvimento e mantendo um padrão profissional.
