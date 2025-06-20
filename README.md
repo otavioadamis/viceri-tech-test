@@ -1,6 +1,10 @@
 
 # Explicação sobre a API e decisões ténicas 🚀
 
+**Tecnologias utilizadas:**
+
+*.NET 8.0* + *Angular 18*
+
 **Links**
 
 *Swagger*
